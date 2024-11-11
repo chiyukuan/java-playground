@@ -1,9 +1,12 @@
 package tree;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class BTreeTraversal {
 
     public static void main(String[] args) {
-        Node root = new Node( 1,
+        Node root = new Node(1,
                 new Node(2,
                         new Node(4, null, null),
                         new Node(5, null, null)
@@ -14,9 +17,12 @@ public class BTreeTraversal {
                 )
         );
         var traveersal = new BTreeTraversal(root);
+        // deep first traversal
         traveersal.inorder();
         traveersal.preorder();
         traveersal.postorder();
+        // breath first traversal
+        traveersal.bft();
     }
 
     public static class Node {
@@ -32,6 +38,7 @@ public class BTreeTraversal {
     }
 
     private Node root;
+
     public BTreeTraversal(Node root) {
         this.root = root;
     }
@@ -40,6 +47,7 @@ public class BTreeTraversal {
         this.inorder(root);
         System.out.println("");
     }
+
     private void inorder(Node node) {
         if (node == null) {
             return;
@@ -75,5 +83,26 @@ public class BTreeTraversal {
         this.postorder(node.left);
         this.postorder(node.right);
         System.out.printf("%d ", node.value);
+    }
+
+    public void bft() {
+        var queue = new ArrayDeque<Node>();
+        var queue2 = new ArrayDeque<Node>();
+        queue.add(this.root);
+        while (!queue.isEmpty()) {
+            var node = queue.pop();
+            System.out.printf("%d ", node.value);
+            if (node.left != null) {
+                queue2.add(node.left);
+            }
+            if (node.right != null) {
+                queue2.add(node.right);
+            }
+            if (queue.isEmpty()) {
+                System.out.println("");
+                queue = queue2;
+                queue2 = new ArrayDeque<Node>();
+            }
+        }
     }
 }

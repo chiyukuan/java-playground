@@ -19,7 +19,7 @@ public class MySort {
         int array[] = new int[]{100, 300, 50};
 
         Arrays.sort(array);
-        for(var elm: array) {
+        for (var elm : array) {
             System.out.printf("%d ", elm);
         }
         System.out.println("");
@@ -53,7 +53,7 @@ public class MySort {
     }
 
     public void show() {
-        for(var elm: this.array) {
+        for (var elm : this.array) {
             System.out.printf("%d ", elm.ival);
         }
         System.out.println("");

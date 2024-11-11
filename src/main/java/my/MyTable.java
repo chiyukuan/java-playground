@@ -34,15 +34,15 @@ public class MyTable {
     }
 
     public void show() {
-        for(var row: this.table) {
-            for(var cell: row) {
+        for (var row : this.table) {
+            for (var cell : row) {
                 System.out.printf("%3d ", cell.intValue());
             }
             System.out.println("");
         }
         System.out.println("");
-        for(var row: this.rawTable) {
-            for(var cell: row) {
+        for (var row : this.rawTable) {
+            for (var cell : row) {
                 System.out.printf("%3d ", cell);
             }
             System.out.println("");

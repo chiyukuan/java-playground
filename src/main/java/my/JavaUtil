@@ -1,0 +1,17 @@
+# java.util
+
+## Spliterator
+
+### Spliterator interface
+- has eight different characteristics that describe its behavior. Those can be used as hints for external tools:
+  - SIZED
+  - SORTED
+  - SUBSIZED
+  - CONCURRENT
+  - DISTICT
+  - IMMUTABLE
+  - NONNULL
+  - ORDERED
+
+### Spliterators
+static classes and methods for operating on or creating instances of Spliterator and its primitive specializations.

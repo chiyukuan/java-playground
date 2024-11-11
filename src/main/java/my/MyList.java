@@ -14,6 +14,7 @@ public class MyList {
 
     private List<Number> alist;
     private int[] rawList;
+
     public MyList(int maxCnt) {
         this.alist = new ArrayList<>();
         this.rawList = new int[maxCnt];
@@ -25,11 +26,11 @@ public class MyList {
     }
 
     public void show() {
-        for(var elm: this.alist) {
+        for (var elm : this.alist) {
             System.out.printf("%d ", elm.intValue());
         }
         System.out.println("");
-        for(var elm: this.rawList) {
+        for (var elm : this.rawList) {
             System.out.printf("%d ", elm);
         }
         System.out.println("");
